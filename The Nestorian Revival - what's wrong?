@@ -1,0 +1,48 @@
+# The Nestorian Revival
+
+narrative_event = {
+	id = 1002201
+	desc = nestorian_revival_desc
+	picture = GFX_evt_cathedral
+	
+	trigger = {
+		year = 1365
+		religion = nestorian
+		controls_religion = yes
+		NOT = {
+			has_global_flag = nestorian_revival
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	immediate = {
+		set_global_flag = nestorian_revival
+	}
+	
+	option = {
+		name = nestorian_revival_opta
+		religion_authority = { modifier = nestorian_revival_modifier }
+		character_event = { id = 1002202 } # inform everyone of this event
+	}
+}
+
+# News of the Revival Spreads
+
+narrative_event = {
+	id = 1002202
+	title = news_nestorian_title
+	major = yes
+	desc = news_nestorian_desc
+	picture = GFX_evt_cathedral
+	
+	only_rulers = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = news_nestorian_opta
+	}
+}
